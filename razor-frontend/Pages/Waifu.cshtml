@@ -1,0 +1,24 @@
+﻿@page
+@model razor_frontend.Pages.WaifuModel
+@{
+    ViewData["Title"] = "Waifus Generator";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" asp-page-handler="FetchWaifu" onsubmit="console.log('sending form...')">
+    <button type="submit" class="btn btn-primary button">Generate New Waifu</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.WaifuUrl))
+{
+    <div class="card">
+        <a href="@Model.WaifuUrl" target="_blank" rel="noopener noreferrer">
+            <img src="@Model.WaifuUrl" alt="Waifu" class="img-fluid waifu-image" />
+        </a>
+    </div>
+}
+else
+{
+    <p>Unable to load waifu.</p>
+}
