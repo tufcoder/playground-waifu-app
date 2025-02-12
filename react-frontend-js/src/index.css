@@ -1,6 +1,17 @@
 :root {
   --black: #000;
   --white: #FFF;
+  /*light colors*/
+  --soft-white: #f8f8f8;
+  --cream: #f5f5dc;
+  --pastel-blue: #e0f2f7;
+  --mint-green: #e8f5e9;
+  --light-yellow: #fff9c4;
+  /*dark colors*/
+  --dark-gray: #333;
+  --midnight-blue: #192734;
+  --dark-purple: #4a148c;
+  --moss-green: #43a047;
 }
 
 html {
@@ -18,7 +29,7 @@ body {
   margin: 0;
   font-size: 1rem;
   color: var(--black);
-  background: var(--white);
+  background: var(--cream);
   /* Fonte do sistema - mais performática */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }

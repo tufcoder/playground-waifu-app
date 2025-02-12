@@ -44,7 +44,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Waifus Generator</h1>
+      <h1 className='title'>Waifus Generator</h1>
       <div className='waifus-container'>
         {
           waifus &&
