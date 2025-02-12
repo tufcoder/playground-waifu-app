@@ -6,9 +6,6 @@ const app = express()
 const PORT = 1337
 
 const URL_API = 'https://api.waifu.pics'
-const MANY = 'many'
-const TYPE = 'sfw'
-const CATEGORY = 'waifu'
 
 app.use(cors())
 app.use(express.json())
@@ -26,10 +23,11 @@ app.get('/api/waifu', async (req, res) => {
   }
 })
 
-app.post('/api/many/waifu', async (req, res) => {
+app.post('/api/many', async (req, res) => {
   try {
+    const { type, category } = req.body
     const response = await axios.post(
-      `${URL_API}/${MANY}/${TYPE}/${CATEGORY}`,
+      `${URL_API}/many/${type}/${category}`,
       {}
     )
     res.send(response.data)
