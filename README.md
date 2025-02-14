@@ -4,7 +4,9 @@ This is a project that uses the `waifu.pics` API with `React` and `JavaScript`.
 
 Select a `category` from the dropdown list and click the `Generate` button.
 
-Wait for the content to load.
+Wait for the content to load. Each card have a `download` and a `link` button.
+
+![](.assets/pics.png)
 
 ## How to run this project
 
