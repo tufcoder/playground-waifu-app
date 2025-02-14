@@ -60,11 +60,23 @@ Make sure you have Node.js and npm (or yarn) installed on your machine. You can 
 
     The frontend will be available at `http://localhost:3000`.
 
-## Technologies Used
+## Technologies & Libraries Used
 
-*   **Frontend:** React, JavaScript, Axios, File-Saver, Phosphor React
-*   **Backend:** Node.js, Express, Axios, Cors, Nodemon (dev)
+*   **Frontend:**
+    *   [React](https://pt-br.legacy.reactjs.org/)
+    *   [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+    *   [Axios](https://www.npmjs.com/package/axios)
+    *   [File-Saver](https://www.npmjs.com/package/file-saver)
+    *   [Phosphor-React](https://www.npmjs.com/package/phosphor-react)
+*   **Backend:**
+    *   [Node.js](https://nodejs.org/en)
+    *   [Express](https://www.npmjs.com/package/express)
+    *   [Axios](https://www.npmjs.com/package/axios)
+    *   [Cors](https://www.npmjs.com/package/cors)
+    *   [Nodemon (dev)](https://www.npmjs.com/package/nodemon)
 *   **API:** [waifu.pics](https://waifu.pics/docs)
+
+    ![](https://raw.githubusercontent.com/Waifu-pics/waifu-api/master/.github/assets/banner.png)
 
 ## Features
 

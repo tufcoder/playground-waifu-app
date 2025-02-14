@@ -13,7 +13,7 @@ app.use(express.json())
 app.get('/api/waifu', async (req, res) => {
   try {
     const response = await axios.get(
-      `${URL_API}/${TYPE}/${CATEGORY}`
+      `${URL_API}/sfw/waifu`
     )
     res.send(response.data)
   } catch (error) {
@@ -39,5 +39,5 @@ app.post('/api/many', async (req, res) => {
 })
 
 app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`)
+  console.log(`✅ Server listening on port: ${PORT}`)
 })
