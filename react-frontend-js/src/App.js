@@ -41,7 +41,6 @@ function App() {
     'dance',
     'cringe'
   ]
-  let randomIndex = -1
   // const DOTNET_BACKEND = 'http://localhost:5280/api/waifu'
   // const MINIMAL_DOTNET_BACKEND = 'http://localhost:5100/api/waifu'
   // const NODEJS_BACKEND = 'http://localhost:1337/api/waifu'
@@ -65,14 +64,14 @@ function App() {
   // }
 
   const getManyRandom = async () => {
+    if (category === '' || category === '-1') {
+      return
+    }
     setLoading(true)
     try {
-      randomIndex = Math.floor(Math.random() * categories.length)
-      const randomCategory = categories[randomIndex]
-      setCategory(randomCategory)
       const response = await axios.post(NODEJS_BACKEND_MANY, {
         type: 'sfw',
-        category: randomCategory
+        category: category
       })
       setWaifus(response.data.files)
     } catch (error) {
@@ -83,18 +82,33 @@ function App() {
     }
   }
 
+  const handleChangeCategory = (e) => {
+    e.preventDefault()
+    setCategory(e.currentTarget.value)
+  }
+
   return (
     <div className="App">
-      <h1 className='title'>Waifus Random Generator</h1>
+      <h1 className='title'>Waifu.pics  Generator</h1>
+      <select
+        name="categories"
+        className='categories'
+        onChange={handleChangeCategory}
+      >
+        <option value="-1" defaultValue={-1}>-- Select a category --</option>
+        {categories.map(category => (
+          <option key={category} value={category}>{category}</option>
+        ))}
+      </select>
       <button className='button' onClick={getManyRandom} disabled={loading}>
         {loading ? 'Loading...' : 'Generate'}
       </button>
-      <h2 className='subtitle'>
+      {/* <h2 className='subtitle'>
         {
           waifus.length > 0 &&
           `Category: ${category}`
         }
-      </h2>
+      </h2> */}
       <div className='waifus-container'>
         {
           waifus.length > 0 &&

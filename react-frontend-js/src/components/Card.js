@@ -24,7 +24,7 @@ const Card = ({ waifu, loading }) => {
 
   return (
     <div className='card'>
-      {loading && <p className='loading'>Loading Waifu...</p>}
+      {loading && <p className='loading'>Loading...</p>}
       {
         waifu && (
           <img

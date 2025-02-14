@@ -18,12 +18,28 @@
   font-size: 32px;
 }
 
+.categories {
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-family: "Bangers", serif;
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+  background-color: #ff6f61;
+  cursor: pointer;
+}
+
+/* .categories option {
+  font-family: "Bangers", serif;
+} */
+
 .button {
   border: none;
   border-radius: 5px;
   padding: 0.75rem 1.5rem;
   color: white;
   font-size: 1rem;
+  font-weight: 600;
   background-color: #ff6f61;
   transition: background-color 0.3s ease;
 }
