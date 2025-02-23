@@ -1,10 +1,17 @@
 import { useState } from 'react'
 import axios from 'axios'
-import Card from './components/Card';
-import './App.css'
 
-function App() {
-  // const [waifu, setWaifu] = useState(null)
+import {
+  AppContainer,
+  Title,
+  Categories,
+  Button,
+  WaifusContainer,
+} from './styles'
+import { Card } from '../Card'
+
+
+export default function App() {
   const [loading, setLoading] = useState(false)
   const [waifus, setWaifus] = useState([])
   const [category, setCategory] = useState('')
@@ -46,24 +53,7 @@ function App() {
   // const NODEJS_BACKEND = 'http://localhost:1337/api/waifu'
   const NODEJS_BACKEND_MANY = 'http://localhost:1337/api/many'
 
-  // const fetchWaifu = async () => {
-  //   setLoading(true)
-  //   try {
-  //     const response = await fetch(NODEJS_BACKEND)
-  //     if (!response.ok) {
-  //       console.error(`HTTP error! status: ${response.status}`)
-  //     }
-  //     const data = await response.json()
-  //     setWaifu(data.url)
-  //   } catch (error) {
-  //     console.error(`Error fetching waifu: ${NODEJS_BACKEND}`, error)
-  //     setWaifu(null)
-  //   } finally {
-  //     setLoading(false)
-  //   }
-  // }
-
-  const getManyRandom = async () => {
+  const getManyRandomData = async () => {
     if (category === '' || category === '-1') {
       return
     }
@@ -83,42 +73,35 @@ function App() {
   }
 
   const handleChangeCategory = (e) => {
-    e.preventDefault()
     setCategory(e.currentTarget.value)
   }
 
   return (
-    <div className="App">
-      <h1 className='title'>Waifu.pics  Generator</h1>
-      <select
+    <AppContainer>
+      <Title>Waifu.pics  Generator</Title>
+      <Categories
         name="categories"
-        className='categories'
         onChange={handleChangeCategory}
       >
         <option value="-1" defaultValue={-1}>-- Select a category --</option>
         {categories.map(category => (
           <option key={category} value={category}>{category}</option>
         ))}
-      </select>
-      <button className='button' onClick={getManyRandom} disabled={loading}>
+      </Categories>
+      <Button
+        onClick={getManyRandomData}
+        disabled={loading}
+      >
         {loading ? 'Loading...' : 'Generate'}
-      </button>
-      {/* <h2 className='subtitle'>
-        {
-          waifus.length > 0 &&
-          `Category: ${category}`
-        }
-      </h2> */}
-      <div className='waifus-container'>
+      </Button>
+      <WaifusContainer>
         {
           waifus.length > 0 &&
           waifus.map(waifu => (
             <Card key={waifu} waifu={waifu} loading={loading} />
           ))
         }
-      </div>
-    </div>
+      </WaifusContainer>
+    </AppContainer>
   )
 }
-
-export default App
