@@ -43,6 +43,11 @@ Make sure you have Node.js and npm (or yarn) installed on your machine. You can 
 I have 2 frontends, `react-frontend-js` and `vite-frontedn-js`.
 The Vite frontend will be published with github pages.
 
+
+### Preview 
+
+<https://tufcoder.github.io/playground-waifu-app>
+
 ### Using `vite-frontend-js`
 
 1.  Navigate to the `vite-frontend-js` folder:
