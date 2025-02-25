@@ -15,7 +15,7 @@ Wait for the content to load. Each card have a `download` and a `link` button.
 
 On a local machine, follow the steps below:
 
-### Prerequisites
+### Prerequisites 📝
 
 Make sure you have Node.js and npm (or yarn) installed on your machine. You can check the versions with the commands `node -v` and `npm -v` (or `yarn -v`).
 
@@ -47,11 +47,11 @@ I have 2 frontends, `react-frontend-js` and `vite-frontedn-js`.
 The Vite frontend will be published with github pages.
 
 
-### Preview 
+### Preview 📺
 
 <https://tufcoder.github.io/playground-waifu-app>
 
-### Using `vite-frontend-js`
+### Using `vite-frontend-js` ⚡
 
 1.  Navigate to the `vite-frontend-js` folder:
 
@@ -73,7 +73,7 @@ The Vite frontend will be published with github pages.
 
     The frontend will be available at `http://localhost:5173`.
 
-### Using `react-frontend-js`
+### Using `react-frontend-js` ⚛️
 
 1.  Navigate to the `react-frontend-js` folder:
 
@@ -112,9 +112,10 @@ The Vite frontend will be published with github pages.
     *   [Axios](https://www.npmjs.com/package/axios)
     *   [Cors](https://www.npmjs.com/package/cors)
     *   [Nodemon (dev)](https://www.npmjs.com/package/nodemon)
-*   **API:** [waifu.pics](https://waifu.pics/docs)
-
-    ![](https://raw.githubusercontent.com/Waifu-pics/waifu-api/master/.github/assets/banner.png)
+*   **API:** *waifu.pics*
+    <a href="https://waifu.pics/docs" target="_blank" rel="noreferrer noopener">
+        <img src="https://raw.githubusercontent.com/Waifu-pics/waifu-api/master/.github/assets/banner.png" alt="Waifu.pics docs">
+    </a>
 
 ## Features 🪶
 

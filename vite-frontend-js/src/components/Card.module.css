@@ -106,6 +106,15 @@
         rgba(0, 0, 0, 0.5) 100%);
   }
 
+  .cardButtonContainer {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .cardContainer:hover>.cardButtonContainer {
+    opacity: 1;
+  }
+
   .cardButtonBase {
     transition: background-color 0.3s ease;
 
