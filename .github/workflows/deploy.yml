@@ -19,7 +19,7 @@ jobs:
       - name: 📦 Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: npm
 
       - name: 🔑 Configurar variáveis de ambiente
@@ -28,7 +28,9 @@ jobs:
           echo "VITE_API_URL=${{ secrets.VITE_API_URL }}" >> vite-frontend-js/.env
 
       - name: 📥 Instalar dependências
-        run: npm install
+        run: |
+          cd vite-frontend-js
+          npm install
 
       - name: 🔨 Construir o projeto
         run: |
