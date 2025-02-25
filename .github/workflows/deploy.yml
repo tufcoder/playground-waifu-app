@@ -25,22 +25,18 @@ jobs:
 
       - name: 🔑 Configurar variáveis de ambiente
         run: |
-          echo "VITE_PROXY=${{ secrets.VITE_PROXY }}" >> vite-frontend-js/.env
-          echo "VITE_API_URL=${{ secrets.VITE_API_URL }}" >> vite-frontend-js/.env
+          echo "VITE_PROXY=${{ secrets.VITE_PROXY }}" >> ./vite-frontend-js/.env
+          echo "VITE_API_URL=${{ secrets.VITE_API_URL }}" >> ./vite-frontend-js/.env
 
       - name: 📥 Instalar dependências
-        run: |
-          cd vite-frontend-js
-          npm install
+        run: npm install --prefix ./vite-frontend-js
 
       - name: 🔨 Construir o projeto
-        run: |
-          cd vite-frontend-js
-          npm run build
+        run: npm run build --prefix ./vite-frontend-js
 
       - name: 🚀 Fazer deploy para GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: vite-frontend-js/dist
+          folder: ./vite-frontend-js/dist
           clean: true
