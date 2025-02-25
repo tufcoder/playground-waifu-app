@@ -6,7 +6,10 @@ Select a `category` from the dropdown list and click the `Generate` button.
 
 Wait for the content to load. Each card have a `download` and a `link` button.
 
-![](.assets/pics.png)
+<a href="https://tufcoder.github.io/playground-waifu-app/" target="_blank" rel="noreferrer noopener">
+  <img src=".assets/pics.png" alt="Preview">
+</a>
+
 
 ## How to run this project ⚙️
 
