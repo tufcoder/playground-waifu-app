@@ -1,35 +1,70 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import axios from 'axios'
 
-function App() {
-  const [count, setCount] = useState(0)
+import { categories } from './assets/categories'
+import { Card } from './components/Card'
+
+import styles from './App.module.css'
+
+const api = import.meta.env.VITE_API_URL
+
+export default function App() {
+  const [files, setFiles] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [category, setCategory] = useState(null)
+
+  function handleChangeCategory(e) {
+    setCategory(e.target.value)
+  }
+
+  async function handleClickGenerate() {
+    if (category == null || category === '-1') {
+      return
+    }
+    setLoading(true)
+    try {
+      const response = await axios.post(
+        `${api}/${category}`,
+        {}
+      )
+      setFiles(response.data.files)
+    } catch (error) {
+      console.error(`Error fetching waifu api`, error)
+      setFiles(null)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className={styles.appContainer}>
+        <h1 className={styles.title}>Waifu.pics Generator</h1>
+        <div className={styles.optionsContainer}>
+          <select
+            id="categories"
+            className={styles.categories}
+            onChange={handleChangeCategory}
+          >
+            <option value="-1">- Select a Category -</option>
+            {categories.map(category => (
+              <option key={category} value={category}>{category}</option>
+            ))}
+          </select>
+          <button
+            className={styles.buttonGenerate}
+            onClick={handleClickGenerate}
+            disabled={loading}
+          >
+            Generate
+          </button>
+        </div>
+        <div className={styles.waifusContainer}>
+          {files.length > 0 && files.map(file => (
+            <Card key={file} file={file} />
+          ))}
+        </div>
       </div>
-      <h1>Vite + React!!!</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
-
-export default App

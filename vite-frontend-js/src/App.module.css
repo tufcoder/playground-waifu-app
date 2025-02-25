@@ -1,0 +1,165 @@
+.appContainer {
+  /* 300px */
+  min-width: 18.75rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.title {
+  font-family: "Bubblegum Sans", serif;
+  font-size: 2.5rem;
+  color: transparent;
+  background-image:
+    linear-gradient(0.25turn, var(--tomato), var(--soft-tomato), var(--red-tomato));
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.optionsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.categories {
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-family: "Bangers", serif;
+  font-size: 1.25rem;
+  background-color: var(--soft-tomato);
+  color: var(--soft-white);
+  cursor: pointer;
+  text-align: center;
+}
+
+.buttonGenerate {
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1.25rem;
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+  color: var(--soft-white);
+  background-color: var(--soft-tomato);
+}
+
+.waifusContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .appContainer {
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .optionsContainer {
+    gap: 0.5rem;
+  }
+
+  .categories {
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 1.5rem;
+  }
+
+  .buttonGenerate {
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .waifusContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+@media (min-width: 1080px) {
+  .appContainer {
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  .title {
+    font-size: 4rem;
+  }
+
+  .optionsContainer {
+    gap: 0.75rem;
+  }
+
+  .categories {
+    border-radius: 0.75rem;
+    padding: 1rem 1.5rem;
+    font-size: 1.75rem;
+  }
+
+  .buttonGenerate {
+    border-radius: 0.75rem;
+    padding: 1rem 1.75rem;
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .waifusContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1920px) {
+
+  .categories,
+  .buttonGenerate {
+    transition: background-color 0.3s ease;
+  }
+
+  .categories:hover,
+  .buttonGenerate:hover {
+    background-color: var(--red-tomato);
+  }
+
+  .buttonGenerate:disabled {
+    background-color: var(--gray);
+    cursor: not-allowed;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .buttonGenerate:disabled::after {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: inline-block;
+    content: '';
+    margin-left: 0.5rem;
+    border: 2px solid var(--soft-white);
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  .waifusContainer {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

@@ -1,0 +1,140 @@
+.cardContainer {
+  position: relative;
+  /* 250px */
+  max-height: 15.625rem;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 1.5rem;
+  background-color: var(--white);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: inherit;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.cardButtonContainer {
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  gap: 0.25rem;
+  transform: scale(0.75);
+}
+
+.cardButtonBase {
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  color: var(--white);
+  background-color: var(--blue-alpha);
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .cardContainer {
+    /* 350px */
+    max-height: 21.875rem;
+    border-radius: 1.75rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+
+  .cardButtonContainer {
+    gap: 0.5rem;
+    transform: none;
+  }
+}
+
+@media (min-width: 1080px) {
+  .cardContainer {
+    /* 300px */
+    max-height: 18.75rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .cardContainer {
+    /* 400px */
+    max-height: 25rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .cardContainer {
+    /* 500px */
+    max-height: 31.25rem;
+
+    img {
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .cardContainer:hover {
+    img {
+      transform: scale(1.5);
+    }
+  }
+
+  .cardContainer::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease;
+  }
+
+  .cardContainer:hover::after {
+    background-image: linear-gradient(to bottom,
+        /* Preto forte no topo */
+        rgba(0, 0, 0, 0.5) 0%,
+        /* Transição para transparente */
+        rgba(0, 0, 0, 0.2) 2%,
+        /* Centro transparente */
+        rgba(0, 0, 0, 0) 50%,
+        /* Transição para preto forte */
+        rgba(0, 0, 0, 0.2) 98%,
+        /* Preto forte na parte inferior */
+        rgba(0, 0, 0, 0.5) 100%);
+  }
+
+  .cardButtonBase {
+    transition: background-color 0.3s ease;
+
+    >svg {
+      transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+    }
+  }
+
+  .cardButtonBase:hover {
+    >svg {
+      transform: scale(1.4);
+    }
+  }
+
+  .cardDownloadButton:hover {
+    background-color: var(--moss-green);
+
+    >svg {
+      color: var(--mint-green);
+    }
+  }
+
+  .cardLinkButton:hover {
+    background-color: var(--mint-green);
+
+    >svg {
+      color: var(--moss-green);
+    }
+  }
+}

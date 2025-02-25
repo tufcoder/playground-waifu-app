@@ -1,4 +1,4 @@
-# Waifu App
+# Waifu App 👩
 
 This is a project that uses the `waifu.pics` API with `React` and `JavaScript`.
 
@@ -8,7 +8,7 @@ Wait for the content to load. Each card have a `download` and a `link` button.
 
 ![](.assets/pics.png)
 
-## How to run this project
+## How to run this project ⚙️
 
 On a local machine, follow the steps below:
 
@@ -16,7 +16,7 @@ On a local machine, follow the steps below:
 
 Make sure you have Node.js and npm (or yarn) installed on your machine. You can check the versions with the commands `node -v` and `npm -v` (or `yarn -v`).
 
-### Backend
+### Backend ⌨️
 
 1.  Navigate to the `nodejs-backend` folder:
 
@@ -38,12 +38,39 @@ Make sure you have Node.js and npm (or yarn) installed on your machine. You can 
 
     The backend will be available at `http://localhost:1337`.
 
-### Frontend
+### Frontend 💻
 
-1.  Navigate to the `react-frontend` folder:
+I have 2 frontends, `react-frontend-js` and `vite-frontedn-js`.
+The Vite frontend will be published with github pages.
+
+### Using `vite-frontend-js`
+
+1.  Navigate to the `vite-frontend-js` folder:
 
     ```sh
-    cd react-frontend
+    cd vite-frontend-js
+    ```
+
+2.  Install dependencies:
+
+    ```sh
+    npm install # Or yarn install
+    ```
+
+3.  Start the frontend:
+
+    ```sh
+    npm run dev
+    ```
+
+    The frontend will be available at `http://localhost:5173`.
+
+### Using `react-frontend-js`
+
+1.  Navigate to the `react-frontend-js` folder:
+
+    ```sh
+    cd react-frontend-js
     ```
 
 2.  Install dependencies:
@@ -60,7 +87,7 @@ Make sure you have Node.js and npm (or yarn) installed on your machine. You can 
 
     The frontend will be available at `http://localhost:3000`.
 
-## Technologies & Libraries Used
+## Technologies & Libraries Used 📚
 
 *   **Frontend:**
     *   [React](https://pt-br.legacy.reactjs.org/)
@@ -68,6 +95,9 @@ Make sure you have Node.js and npm (or yarn) installed on your machine. You can 
     *   [Axios](https://www.npmjs.com/package/axios)
     *   [File-Saver](https://www.npmjs.com/package/file-saver)
     *   [Phosphor-React](https://www.npmjs.com/package/phosphor-react)
+    *   [Emotion](https://www.npmjs.com/package/@emotion/react)
+    *   [Dotenv](https://www.npmjs.com/package/dotenv)
+    *   [PropTypes](https://www.npmjs.com/package/prop-types)
 *   **Backend:**
     *   [Node.js](https://nodejs.org/en)
     *   [Express](https://www.npmjs.com/package/express)
@@ -78,9 +108,14 @@ Make sure you have Node.js and npm (or yarn) installed on your machine. You can 
 
     ![](https://raw.githubusercontent.com/Waifu-pics/waifu-api/master/.github/assets/banner.png)
 
-## Features
+## Features 🪶
 
 *   Category selection
 *   Generation of images in Cards
 *   Download image
 *   Link to image 
+
+## Thanks To 👍
+
+*   [CODE TABS](https://codetabs.com/)
+    Thanks for the [CORS Proxy API](https://codetabs.com/cors-proxy/cors-proxy.html) solution it's very usefull for my download button. I use this in my vite-frontend-js project and was great!
