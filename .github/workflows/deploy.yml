@@ -16,33 +16,35 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Etapa 1: Checkout do repositório
       - name: 🛎️ Checkout do repositório
         uses: actions/checkout@v4
 
-      # Etapa 2: Configurar Node.js
       - name: 📦 Configurar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20.x
 
-      # Etapa 3: Configurar variáveis de ambiente (se necessário)
       - name: 🔑 Configurar variáveis de ambiente
         run: |
           echo "VITE_PROXY=${{ secrets.VITE_PROXY }}" >> ./vite-frontend-js/.env
           echo "VITE_API_URL=${{ secrets.VITE_API_URL }}" >> ./vite-frontend-js/.env
 
-      # Etapa 4: Instalar dependências do projeto
       - name: 📥 Instalar dependências
         run: |
           cd vite-frontend-js && npm install
 
-      # Etapa 5: Construir o projeto
       - name: 🔨 Construir o projeto
         run: |
           cd vite-frontend-js && npm run build
 
-      # Etapa 6: Deploy para GitHub Pages
+      - name: 📂 Listar arquivos do build
+        run: ls -R ./vite-frontend-js/dist
+
+      - name: Debugging deploy folder
+        run: |
+          echo "Deploy folder: ./vite-frontend-js/dist"
+          ls -al ./vite-frontend-js/dist
+
       - name: 🚀 Fazer deploy para GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
