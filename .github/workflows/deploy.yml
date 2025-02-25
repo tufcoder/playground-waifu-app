@@ -21,6 +21,11 @@ jobs:
       - name: 📦 Instalar dependências
         run: npm install
 
+      - name: 🛠 Definir variáveis de ambiente
+        run: |
+          echo "VITE_PROXY=${{ secrets.VITE_PROXY }}" >> $GITHUB_ENV
+          echo "VITE_API_URL=${{ secrets.VITE_API_URL }}" >> $GITHUB_ENV
+
       - name: 🔧 Build do projeto
         run: npm run build
 
