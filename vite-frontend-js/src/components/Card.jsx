@@ -30,6 +30,8 @@ export function Card({ file }) {
           className={`${styles.cardButtonBase} ${styles.cardDownloadButton}`}
           value={file}
           onClick={handleClickDownload}
+          aria-label='download file'
+          title='Download'
         >
           <Download size={20} />
         </button>
@@ -38,6 +40,8 @@ export function Card({ file }) {
           className={`${styles.cardButtonBase} ${styles.cardLinkButton}`}
           target='_blank'
           rel='noreferrer noopener'
+          aria-label='Open in new tab'
+          title='Open in new tab'
         >
           <Link size={20} />
         </a>

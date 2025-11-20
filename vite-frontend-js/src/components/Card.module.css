@@ -64,7 +64,7 @@
   }
 }
 
-@media (min-width: 1920px) {
+@media (max-width: 1920px) {
   .cardContainer {
     /* 500px */
     max-height: 31.25rem;
